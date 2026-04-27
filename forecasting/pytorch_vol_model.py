@@ -1,5 +1,9 @@
 import torch
 import torch.nn as nn # neural network model used to build models like LSTM, layers etc
+'''
+Learns hidden patterns in price movement
+Better than Prophet for complex signals
+'''
 
 class VolatilityNey(nn.Module):
     # This method initializes the model (defines layers)

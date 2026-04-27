@@ -3,6 +3,9 @@ import pandas as pd
 '''
     y → only exists for past (training data)
     yhat → exists for both past AND future
+
+    Prophet = “statistical trend forecaster”
+    Good for baseline predictions
 '''
 class ProphetVolatilityModel:
     def fit(self, df):
