@@ -1,6 +1,9 @@
 from prophet import Prophet # Used for time series forecasting
 import pandas as pd
-
+'''
+    y → only exists for past (training data)
+    yhat → exists for both past AND future
+'''
 class ProphetVolatilityModel:
     def fit(self, df):
         # Prophet expects specific column names:
