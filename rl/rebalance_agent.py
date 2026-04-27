@@ -18,3 +18,14 @@ class PortfolioAgent:
 
         # Valid Portfolio Allocation - Normalize so weights sum to 1(100% distribution of capital across assets)
         return weights/ np.sum(weights)
+    
+    def update(self, reward):
+        # If reward positive - strengthen current strategy or else weaken it
+        learning_rate = 0.1
+        self.weights = self.weights + learning_rate*reward
+
+        # Keep weight valid - no negative
+        self.weights = np.maximum(self.weights, 0)
+
+        # Normalize again so total = 1
+        self.weights = self.weights/np.sum(self.weights)
