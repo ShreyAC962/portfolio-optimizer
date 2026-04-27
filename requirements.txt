@@ -1,0 +1,11 @@
+pandas
+numpy
+scikit-learn
+torch
+prophet
+fastapi
+uvicorn
+boto3
+sagemaker
+gym
+matplotlib
