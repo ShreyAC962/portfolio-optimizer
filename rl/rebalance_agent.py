@@ -24,8 +24,8 @@ class PortfolioAgent:
     def update(self, reward):
         # If reward positive - strengthen current strategy or else weaken it
         learning_rate = 0.1
-        # Assume reward applies to portfolio as a whole
-        self.weights = self.weights *(1 + learning_rate*reward)
+    #   adjusts weights in a more stable additive way
+        self.weights = self.weights + learning_rate * reward
 
         # Keep weight valid - no negative
         self.weights = np.maximum(self.weights, 0)
