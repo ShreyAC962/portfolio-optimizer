@@ -1,7 +1,9 @@
 import numpy as np
 
 # Simple Portfolio Optimization Agent - decision-maker for asset allocation
-
+'''
+act() generates portfolio allocation from market signals, while update() adjusts internal strategy based on realized reward (profit/loss), making it a basic reinforcement learning loop: decision → outcome → learning.
+'''
 class PortfolioAgent:
     def __init__(self, n_assets):
         '''
@@ -22,7 +24,8 @@ class PortfolioAgent:
     def update(self, reward):
         # If reward positive - strengthen current strategy or else weaken it
         learning_rate = 0.1
-        self.weights = self.weights + learning_rate*reward
+        # Assume reward applies to portfolio as a whole
+        self.weights = self.weights *(1 + learning_rate*reward)
 
         # Keep weight valid - no negative
         self.weights = np.maximum(self.weights, 0)
